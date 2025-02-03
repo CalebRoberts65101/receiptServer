@@ -73,8 +73,7 @@ func itemDescription(request *processReceiptRequest) (int, error) {
 		if isLengthRight {
 			price, err := strconv.ParseFloat(item.Price, 64)
 			if err != nil {
-				// TODO: modify score to instead return an error
-				panic(err)
+				return 0, err
 			}
 			currentTotal += int(math.Ceil(price * 0.2))
 		}
